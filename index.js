@@ -1,4 +1,4 @@
-// challenges.js
+// index.js
 // Your solutions go here!
 
 // The below imports the streamingLibrary object from the streamingLibrary.js file.
