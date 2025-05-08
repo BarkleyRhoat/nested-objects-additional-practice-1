@@ -21,11 +21,11 @@ You are given a JavaScript file that contains the following data structure:
 
 - **Genres** (e.g., Comedy, Sci-Fi)
 
-  - Each genre contains multiple **Shows**
+  - Each genre contains an array of multiple **Shows**
 
-    - Each show has multiple **Seasons**
+    - Each show has an array of multiple **Seasons**
 
-      - Each season contains multiple **Episodes**
+      - Each season contains an array of multiple **Episodes**
 
         - Each episode has a **title**, **episode number**, and **rating**
 
@@ -58,8 +58,8 @@ const streamingLibrary = {
 You will complete **7 coding challenges** below to practice digging into the data.
 We are importing it from a separate file, but you can still access the data like any other named object as such:
 
-```javascript
-// From within challenge.js:
+```js
+// From within index.js:
 return streamingLibrary.genres;
 // =>  {
 //       name: "Science Fiction",
@@ -131,7 +131,7 @@ These are **optional** but will stretch your skills further:
 - Fork this repo.
 - Create a new branch and clone it to your computer.
 - Open `streamingLibrary.js` (this file contains the data)
-- Open `challenges.js` (this file is where you’ll write your solutions)
+- Open `index.js` (this file is where you’ll write your solutions)
 - For each challenge, write a function or script that **logs the answer** to the console
 - Test your work by running the command:
 
