@@ -4,7 +4,7 @@ Welcome to your **JavaScript object & array navigation challenge**!
 
 In this project, you’ll be working with a **mock streaming service catalog** — similar to Netflix — and writing code to access, filter, and manipulate information stored inside a **nested object** full of genres, shows, seasons, episodes, and ratings.
 
-This is also going to have you work with an imported object potentially for the first time. You'll see that you can use just like any other object
+This is also going to have you work with an imported object potentially for the first time. You'll see that you can use it just like any other object
 in your code.
 
 This challenge will help you practice:
