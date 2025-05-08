@@ -85,25 +85,25 @@ return streamingLibrary.genres;
 ## 💻 Coding Challenges
 
 1. **List all genre names**
-   → Output an array of all genre names in the library.
+   → Create an array called `genreNames` that includes all of the names of the genres.
 
 2. **List all show titles in a given genre**
-   → Write a function that takes a **genre name** and returns all show titles in that genre.
+   → Write a function called `getShowTitlesByGenre` that takes a **genre name** and returns all show titles in that genre.
 
 3. **List all episode titles for a given show**
-   → Write a function that takes a **show title** and returns all episode titles (across all seasons).
+   → Write a function called `getEpisodeTitlesByShow` that takes a **show title** and returns all episode titles (across all seasons).
 
 4. **Find all episodes with a rating above 9**
-   → Output an array of `{ showTitle, episodeTitle, rating }` for all episodes with a rating greater than 9.
+   → Create an array of objects called `highRatedEpisodes` that contains `{ showTitle, episodeTitle, rating }` for all episodes with a rating greater than 9.
 
 5. **Count total number of episodes in the entire library**
-   → Output the total number of episodes across all shows, seasons, and genres.
+   → Create a variable called `totalEpisodes` that is a count of the total number of episodes across all shows, seasons, and genres.
 
 6. **Find all shows that have at least one episode rated 9 or higher**
-   → Output an array of show titles that have at least one high-rated episode.
+   → Create an array of show titles called `showsWithHighRatedEpisodes` that have at least one high-rated episode.
 
 7. **List all episodes from a specific season of a show**
-   → Write a function that takes a **show title** and **season number** and returns all episode titles in that season.
+   → Write a function called `getEpisodesByShowAndSeason` that takes a **show title** and **season number** and returns all episode titles in that season.
 
 ---
 
@@ -112,17 +112,17 @@ return streamingLibrary.genres;
 These are **optional** but will stretch your skills further:
 
 8. **Add a new episode**
-   → Write a function that adds a new episode to a show and season of your choice.
+   → Write a function called `addEpisode` that adds a new episode to a show and season of your choice.
    Example: `addEpisode("Galaxy Quest", 1, { episodeNumber: 3, title: "New Adventure", rating: 9.3 })`
 
 9. **Find the highest-rated episode in the entire library**
-   → Write a function that returns the episode with the highest rating, including its show title, season number, episode title, and rating.
+   → Write a function called `getHighestRatedEpisode` that returns the episode with the highest rating, including its show title, season number, episode title, and rating.
 
 10. **Sort all episodes of a show by rating (highest to lowest)**
-    → Write a function that takes a **show title** and returns a sorted array of all its episodes (across all seasons) by rating.
+    → Write a function called `getEpisodesSortedByRating` that takes a **show title** and returns a sorted array of all its episodes (across all seasons) by rating.
 
 11. **Get the average episode rating for a show**
-    → Write a function that takes a **show title** and returns the average rating of all its episodes (across all seasons).
+    → Write a function called `getAverageRatingForShow` that takes a **show title** and returns the average rating of all its episodes (across all seasons).
 
 ---
 
