@@ -1,6 +1,6 @@
 // streamingLibrary.js
 
-export const streamingLibrary = {
+const streamingLibrary = {
   genres: [
     {
       name: "Science Fiction",
@@ -77,3 +77,5 @@ export const streamingLibrary = {
     }
   ]
 };
+
+module.exports = streamingLibrary;
