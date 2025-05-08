@@ -56,7 +56,7 @@ We are importing it from a separate file, but you can still access the data like
 
 ```javascript
 // From within challenge.js:
-return streamingLibrary[0];
+return streamingLibrary.genres;
 // =>  {
 //       name: "Science Fiction",
 //       shows: [
