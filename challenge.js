@@ -1,8 +1,9 @@
 // challenges.js
 // Your solutions go here!
 
-// The below imports the streamingLibrary object from the 
-const streamingLibrary = require('./streamingLibrary');
+// The below imports the streamingLibrary object from the streamingLibrary.js file.
+// Use it like any other object
+import streamingLibrary from './streamingLibrary';
 
 // Challenge 1: List all genre names
 // TODO: Write code here
