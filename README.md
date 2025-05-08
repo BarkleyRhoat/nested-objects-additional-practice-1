@@ -128,6 +128,8 @@ These are **optional** but will stretch your skills further:
 
 ## ✅ How to complete the project
 
+- Fork this repo.
+- Create a new branch and clone it to your computer.
 - Open `streamingLibrary.js` (this file contains the data)
 - Open `challenges.js` (this file is where you’ll write your solutions)
 - For each challenge, write a function or script that **logs the answer** to the console
@@ -152,10 +154,8 @@ npm test
 
 When you’ve completed all challenges:
 
-- Make sure your code runs without errors
-- Push your project to your GitHub repository
-  OR
-- Zip your project folder and share it with your instructor
+- Make sure all tests are passing with `npm test`.
+- Open a PR for your branch.
 
 ---
 
