@@ -9,6 +9,7 @@ const streamingLibrary = require('./streamingLibrary');
 
 // Challenge 1: List all genre names
 // TODO: Write code here to create genreNames array
+const genreNames = streamingLibrary.genres.map(genre => genre.name);
 
 
 // Challenge 2: List all show titles in a given genre
