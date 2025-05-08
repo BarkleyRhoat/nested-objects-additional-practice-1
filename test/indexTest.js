@@ -7,7 +7,7 @@ const challenges = require(path.resolve(__dirname, '../index'));
 describe('Streaming Library Challenges', () => {
   it('Challenge 1: should list all genre names', () => {
     const genreNames = streamingLibrary.genres.map(g => g.name);
-    expect(genreNames).to.include.members(['Science Fiction', 'Drama']); // Example genres
+    expect(genreNames).to.include.members(['Science Fiction', 'Comedy']); 
   });
 
   it('Challenge 2: should return correct shows for a given genre', () => {
