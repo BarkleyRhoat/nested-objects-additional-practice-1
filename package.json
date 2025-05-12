@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://github.com:powercodeacademy/mikes-repo.git"
+    "url": "git+ssh://github.com:powercodeacademy/nested-objects-additional-practice-1.git"
   },
   "keywords": [
     "flatiron school",
@@ -22,11 +22,7 @@
     "debugging"
   ],
   "author": "PCA",
-  "license": "CC-BY-NC-SA-4.0",
-  "bugs": {
-    "url": "https://github.com/powercodeacademy/mikes-repo/issues"
-  },
-  "homepage": "https://github.com/powercodeacademy/mikes-repo#readme",
+  "homepage": "https://github.com/powercodeacademy/nested-objects-additional-practice-1#readme",
   "dependencies": {
     "chai": "^4.2.0",
     "jsdom": "^9.0",
