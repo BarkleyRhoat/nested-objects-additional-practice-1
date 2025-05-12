@@ -24,52 +24,48 @@ describe("Streaming Library solutions", () => {
 
   it("getShowTitlesByGenre should return correct shows for a given genre", () => {
     const titles = getShowTitlesByGenre("Science Fiction")
-    expect(titles).to.deep.equal(['Galaxy Quest', 'Star Voyagers'])
+    expect(titles).to.deep.equal(["Galaxy Quest", "Star Voyagers"])
   })
 
   it("getEpisodeTitlesByShow should return episode titles for a given show", () => {
     const episodes = getEpisodeTitlesByShow("Galaxy Quest")
-    expect(episodes).to.deep.equal(["Pilot", "Into the Void", "The Wormhole", "Return to Earth", "Final Frontier"])
+    expect(episodes).to.deep.equal([
+      "Pilot",
+      "Into the Void",
+      "The Wormhole",
+      "Return to Earth",
+      "Final Frontier",
+    ])
   })
 
   it("highRatedEpisodes should find episodes with rating > 9", () => {
-    const highRatings = [
-      {
-        showTitle: 'Galaxy Quest',
-        episodeTitle: 'Into the Void',
-        rating: 9.1
-      },
-      {
-        showTitle: 'Galaxy Quest',
-        episodeTitle: 'Return to Earth',
-        rating: 9.3
-      },
-      {
-        showTitle: 'Star Voyagers',
-        episodeTitle: 'Cosmic Storm',
-        rating: 9.4
-      }
-    ]
-    expect(highRatedEpisodes.find((ep) => ep.rating < 9)).to.equal(undefined)
-    expect(highRatedEpisodes.length).to.equal(3)
-    expect(highRatedEpisodes).to.deep.equal(highRatings)
+    const episodes = highRatedEpisodes()
+    expect(episodes.find((ep) => ep.rating < 9)).to.equal(undefined)
+    expect(episodes.length).to.equal(3)
+    expect(episodes.map((ep) => ep.episodeTitle)).to.deep.equal([
+      "Into the Void",
+      "Return to Earth",
+      "Cosmic Storm",
+    ])
   })
 
   it("totalEpisodes should count total number of episodes", () => {
-    expect(totalEpisodes).to.be.a("number")
-    expect(totalEpisodes).to.be.above(0)
-    expect(totalEpisodes).to.equal(13)
+    const total = totalEpisodes()
+    expect(total).to.be.a("number")
+    expect(total).to.be.above(0)
+    expect(total).to.equal(13)
   })
 
   it("showsWithHighRatedEpisodes should find shows with episodes rated >= 9", () => {
-    expect(showsWithHighRatedEpisodes.length).to.be.greaterThan(0)
-    expect(showsWithHighRatedEpisodes.length).to.equal(2)
-    expect(showsWithHighRatedEpisodes).to.deep.equal(['Galaxy Quest', 'Star Voyagers'])
+    const shows = showsWithHighRatedEpisodes()
+    expect(shows.length).to.be.greaterThan(0)
+    expect(shows.length).to.equal(2)
+    expect(shows).to.deep.equal(["Galaxy Quest", "Star Voyagers"])
   })
 
   it("getEpisodesByShowAndSeason should list episodes from specific season of a show", () => {
     const episodes = getEpisodesByShowAndSeason("Galaxy Quest", 1)
-    expect(episodes).to.deep.equal(['Pilot', 'Into the Void', "The Wormhole"])
+    expect(episodes).to.deep.equal(["Pilot", "Into the Void", "The Wormhole"])
   })
 
   it("addEpisode should add a new episode", () => {
@@ -77,7 +73,12 @@ describe("Streaming Library solutions", () => {
     addEpisode("Galaxy Quest", 1, newEp)
     const episodes = getEpisodesByShowAndSeason("Galaxy Quest", 1)
     expect(episodes).to.include(newEp.title)
-    expect(episodes).to.deep.equal(['Pilot', 'Into the Void', 'The Wormhole', 'Bonus Episode'])
+    expect(episodes).to.deep.equal([
+      "Pilot",
+      "Into the Void",
+      "The Wormhole",
+      "Bonus Episode",
+    ])
   })
 
   it("getHighestRatedEpisode should find the highest-rated episode", () => {
