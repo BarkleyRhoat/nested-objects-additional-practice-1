@@ -132,7 +132,7 @@ These are **optional** but will stretch your skills further:
 - Create a new branch and clone it to your computer.
 - Open `streamingLibrary.js` (this file contains the data)
 - Open `index.js` (this file is where you’ll write your solutions)
-- For each challenge, write a function or script that **logs the answer** to the console
+- For each challenge, write a function that returns the answer
 - Test your work by running the command:
 
 ```bash
