@@ -52,7 +52,7 @@ const streamingLibrary = {
       ],
     },
   ],
-};
+}
 ```
 
 You will complete **7 coding challenges** below to practice digging into the data.
@@ -60,7 +60,7 @@ We are importing it from a separate file, but you can still access the data like
 
 ```js
 // From within index.js:
-return streamingLibrary.genres;
+return streamingLibrary.genres
 // =>  {
 //       name: "Science Fiction",
 //       shows: [
