@@ -11,20 +11,41 @@ const getShowTitlesByGenre = (genreName) => {
   return genre.shows.map((show) => show.title);
 };
 
-const getEpisodeTitlesByShow = () => {
-  // Your code here
+const getEpisodeTitlesByShow = (showTitle) => {
+  const allShows = streamingLibrary.genres.map((g) => g.shows).flat();
+  const show = allShows.find((s) => s.title === showTitle);
+  return show.seasons
+    .map((season) => season.episodes.map((episode) => episode.title))
+    .flat();
 };
 
 const highRatedEpisodes = () => {
-  // Your code here
+  const highRated = [];
+  function goatedEpisode(showTitle, episodeTitle, rating) {
+    this.showTitle = showTitle
+    this.episodeTitle = episodeTitle
+    this.rating = rating
+  }
+  for (const genre of streamingLibrary.genres) {
+    for (const show of genre.shows) {
+      for (const season of show.seasons) {
+        for (const episode of season.episodes) {
+          if (episode.rating > 9) {
+            highRated.push(new goatedEpisode(show.title, episode.title, episode.rating));
+          }
+        }
+      }
+    }
+  }
+  return highRated
 };
 
 const totalEpisodes = () => {
-  // Your code here
+
 };
 
 const showsWithHighRatedEpisodes = () => {
-  // Your code here
+  
 };
 
 const getEpisodesByShowAndSeason = () => {
