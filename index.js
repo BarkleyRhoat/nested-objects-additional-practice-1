@@ -41,11 +41,20 @@ const highRatedEpisodes = () => {
 };
 
 const totalEpisodes = () => {
+  let count = 0;
+  for (const genre of streamingLibrary.genres) {
+    for (const show of genre.shows) {
+      for (const season of show.seasons) {
+        count += season.episodes.length;
+      }
+    }
+  }
+  return count;
+}
 
-};
 
 const showsWithHighRatedEpisodes = () => {
-  
+
 };
 
 const getEpisodesByShowAndSeason = () => {
