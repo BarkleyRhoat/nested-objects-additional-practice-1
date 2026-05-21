@@ -76,8 +76,11 @@ const getEpisodesByShowAndSeason = (showTitle, seasonNumber) => {
   return showSeasons.episodes.map((e) => e.title)
 };
 
-const addEpisode = () => {
-  // Your code here
+const addEpisode = (showTitle, seasonNumber, newEp) => {
+  const allShows = streamingLibrary.genres.map((g) => g.shows).flat() 
+  const show = allShows.find((s) => s.title === showTitle);
+  const showSeasons = show.seasons.find((season) => season.seasonNumber === seasonNumber)
+  return showSeasons.episodes.push(newEp)
 };
 
 const getHighestRatedEpisode = () => {
