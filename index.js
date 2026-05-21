@@ -34,6 +34,7 @@ const highRatedEpisodes = () => {
   return highRated;
 };
 
+
 const totalEpisodes = () => {
   let count = 0;
   for (const genre of streamingLibrary.genres) {
@@ -105,8 +106,12 @@ const getEpisodesSortedByRating = (showTitle) => {
   return show.seasons.map((season) => season.episodes).flat().sort((ep1, ep2) => ep2.rating - ep1.rating);
 };
 
-const getAverageRatingForShow = () => {
-  // Your code here
+const getAverageRatingForShow = (showTitle) => {
+  const allShows = streamingLibrary.genres.map((g) => g.shows).flat();
+  const show = allShows.find((s) => s.title === showTitle)
+  const episodes = show.seasons.map((season) => season.episodes).flat();
+  const total = episodes.reduce((sum, episode) => sum + episode.rating, 0);
+  return (total / episodes.length).toFixed(2);
 };
 
 // ===================================================================================================
