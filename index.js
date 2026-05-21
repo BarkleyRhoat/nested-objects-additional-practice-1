@@ -1,7 +1,5 @@
 const { streamingLibrary } = require("./streamingLibrary.js");
 
-console.log("streamingLibrary: ", streamingLibrary);
-
 const genreNames = () => {
   return streamingLibrary.genres.map((g) => g.name);
 };
@@ -69,22 +67,40 @@ const showsWithHighRatedEpisodes = () => {
 };
 
 const getEpisodesByShowAndSeason = (showTitle, seasonNumber) => {
-   
   const allShows = streamingLibrary.genres.map((g) => g.shows).flat();
   const show = allShows.find((s) => s.title === showTitle);
-  const showSeasons = show.seasons.find((season) => season.seasonNumber === seasonNumber)
-  return showSeasons.episodes.map((e) => e.title)
+  const showSeasons = show.seasons.find(
+    (season) => season.seasonNumber === seasonNumber,
+  );
+  return showSeasons.episodes.map((e) => e.title);
 };
 
 const addEpisode = (showTitle, seasonNumber, newEp) => {
-  const allShows = streamingLibrary.genres.map((g) => g.shows).flat() 
+  const allShows = streamingLibrary.genres.map((g) => g.shows).flat();
   const show = allShows.find((s) => s.title === showTitle);
-  const showSeasons = show.seasons.find((season) => season.seasonNumber === seasonNumber)
-  return showSeasons.episodes.push(newEp)
+  const showSeasons = show.seasons.find(
+    (season) => season.seasonNumber === seasonNumber,
+  );
+  return showSeasons.episodes.push(newEp);
+  console.log(episodes);
 };
 
 const getHighestRatedEpisode = () => {
-  // Your code here
+  let highestRatedEpisodeEver = null;
+  for (const genre of streamingLibrary.genres) {
+    for (const show of genre.shows) {
+      for (const season of show.seasons) {
+        for (const episodes of season.episodes)
+          if (
+            highestRatedEpisodeEver === null ||
+            episodes.rating > highestRatedEpisodeEver.rating
+          ) {
+            highestRatedEpisodeEver = episodes;
+          }
+      }
+    }
+  }
+  return highestRatedEpisodeEver;
 };
 
 const getEpisodesSortedByRating = () => {
