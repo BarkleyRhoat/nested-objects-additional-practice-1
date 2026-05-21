@@ -12,9 +12,7 @@ const getShowTitlesByGenre = (genreName) => {
 const getEpisodeTitlesByShow = (showTitle) => {
   const allShows = streamingLibrary.genres.map((g) => g.shows).flat();
   const show = allShows.find((s) => s.title === showTitle);
-  return show.seasons
-    .map((season) => season.episodes.map((episode) => episode.title))
-    .flat();
+  return show.seasons.map((season) => season.episodes.map((episode) => episode.title)).flat();
 };
 
 const highRatedEpisodes = () => {
@@ -69,9 +67,7 @@ const showsWithHighRatedEpisodes = () => {
 const getEpisodesByShowAndSeason = (showTitle, seasonNumber) => {
   const allShows = streamingLibrary.genres.map((g) => g.shows).flat();
   const show = allShows.find((s) => s.title === showTitle);
-  const showSeasons = show.seasons.find(
-    (season) => season.seasonNumber === seasonNumber,
-  );
+  const showSeasons = show.seasons.find((season) => season.seasonNumber === seasonNumber);
   return showSeasons.episodes.map((e) => e.title);
 };
 
@@ -103,8 +99,10 @@ const getHighestRatedEpisode = () => {
   return highestRatedEpisodeEver;
 };
 
-const getEpisodesSortedByRating = () => {
-  // Your code here
+const getEpisodesSortedByRating = (showTitle) => {
+  const allShows = streamingLibrary.genres.map((g) => g.shows).flat();
+  const show = allShows.find((s) => s.title === showTitle);
+  return show.seasons.map((season) => season.episodes).flat().sort((ep1, ep2) => ep2.rating - ep1.rating);
 };
 
 const getAverageRatingForShow = () => {
