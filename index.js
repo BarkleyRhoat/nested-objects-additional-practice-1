@@ -21,23 +21,21 @@ const getEpisodeTitlesByShow = (showTitle) => {
 
 const highRatedEpisodes = () => {
   const highRated = [];
-  function goatedEpisode(showTitle, episodeTitle, rating) {
-    this.showTitle = showTitle
-    this.episodeTitle = episodeTitle
-    this.rating = rating
-  }
   for (const genre of streamingLibrary.genres) {
     for (const show of genre.shows) {
       for (const season of show.seasons) {
         for (const episode of season.episodes) {
           if (episode.rating > 9) {
-            highRated.push(new goatedEpisode(show.title, episode.title, episode.rating));
+            highRated.push({
+              episodeTitle: episode.title,
+              rating: episode.rating,
+            });
           }
         }
       }
     }
   }
-  return highRated
+  return highRated;
 };
 
 const totalEpisodes = () => {
@@ -50,15 +48,32 @@ const totalEpisodes = () => {
     }
   }
   return count;
-}
-
-
-const showsWithHighRatedEpisodes = () => {
-
 };
 
-const getEpisodesByShowAndSeason = () => {
-  // Your code here
+const showsWithHighRatedEpisodes = () => {
+  const showWithGoatedEpisode = [];
+  for (const genre of streamingLibrary.genres) {
+    for (const show of genre.shows) {
+      for (const season of show.seasons) {
+        for (const episode of season.episodes)
+          if (
+            episode.rating >= 9 &&
+            !showWithGoatedEpisode.includes(show.title)
+          ) {
+            showWithGoatedEpisode.push(show.title);
+          }
+      }
+    }
+  }
+  return showWithGoatedEpisode;
+};
+
+const getEpisodesByShowAndSeason = (showTitle, seasonNumber) => {
+   
+  const allShows = streamingLibrary.genres.map((g) => g.shows).flat();
+  const show = allShows.find((s) => s.title === showTitle);
+  const showSeasons = show.seasons.find((season) => season.seasonNumber === seasonNumber)
+  return showSeasons.episodes.map((e) => e.title)
 };
 
 const addEpisode = () => {
